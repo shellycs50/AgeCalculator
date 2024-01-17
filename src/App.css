@@ -1,0 +1,299 @@
+@font-face {
+  font-family: 'poppins-bold';
+  src: url('../src/assets/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins-x-bold';
+  src: url('../src/assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: poppins-i-bold;
+  src: url('../src/assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: poppins-reg;
+  src: url('../src/assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+
+div.wrapper-wrapper {
+  background-color: hsl(0, 0%, 86%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background-color: hsl(0, 0%, 86%);
+}
+
+div.birthday-wrapper {
+  background-color: hsl(0, 0%, 94%);
+  padding: 40px 0px;
+  border-radius: 25px;
+  border-bottom-right-radius: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 40%;
+}
+form.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  margin: 0px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 40px;
+
+}
+form.grid-3 input {
+  width: 70%;
+  border: none;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px
+}
+
+div.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+body, input, label, a {
+  font-family: poppins-bold;
+  font-size: 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: poppins-i-bold;
+}
+
+form label {
+  letter-spacing: .3em;
+  font-size: 1rem
+}
+
+.content h2 {
+  font-size: 5rem;
+}
+
+span.value-display {
+  color: hsl(259, 100%, 65%);
+  padding-right: 0.25vw;
+}
+
+div.content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+}
+
+div.content {
+  position: relative;
+  bottom: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+div.content h2 {
+  margin: 0;
+  padding: 0;
+}
+
+p.error-message {
+  font-size: 0.7rem;
+  color: hsl(0, 100%, 67%);
+  font-family: 'poppins-reg';
+  padding: 0;
+  margin: 0;
+}
+
+a.activate-birthday {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 83%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  padding: 25px;
+  background-color: hsl(259, 100%, 65%);
+}
+
+a.activate-birthday:hover {
+  background-color: #000000
+}
+
+div.division-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 30px;
+  padding-left: 0px;
+  padding: 0px 100px 0px 40px;
+}
+
+div.gap-div {
+  height: 50%;
+}
+
+div.division-line {
+  height: 50%;
+  border-top: 1px solid hsl(0, 0%, 86%);
+}
+
+div.w-100 {
+  width: 100%;
+  position: relative;
+}
+
+#margin-top-0 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.grid-3-mobile-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 1300px) {
+  div.content h2 {
+    font-size: 6vw;
+  }
+
+}
+
+@media screen and (max-width: 1550px) {
+  a.activate-birthday {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    padding: 10px;
+    background-color: hsl(259, 100%, 65%);
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+
+  div.wrapper-wrapper {
+    background-color: hsl(0, 0%, 86%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+  }
+  div.content {
+    gap: 0px;
+  }
+  div.content h2 {
+    font-size: 14vw;
+  }
+  div.birthday-wrapper {
+    width: 100%;
+    padding: 20px 0px;
+    margin: 0px 0px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.activate-birthday {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    padding: 18px;
+    padding: 1.5vw;
+    background-color: hsl(259, 100%, 65%);
+  }
+
+  form.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
+    padding: 20px;
+
+    
+  }
+  div.division-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30px;
+    width: 95%;
+    padding: 0px 80px 0px 80px;
+  }
+
+    div.w-100 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+  div.division-button-wrapper {
+    
+  }
+
+  div.content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
+  }
+  
+
+}
+  @media screen and (max-width: 300px) {
+    html {
+      display: none
+    }
+  }
+  
