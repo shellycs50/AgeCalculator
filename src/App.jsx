@@ -42,7 +42,13 @@ function App() {
       months: false,
       days: false
     }
-    if (month > 12 || month < 1 || month === '') {
+    let current = new Date();
+    let proxy = new Date(year, month - 1, day)
+    if (proxy > current) {
+      errors.years = true;
+      console.log(proxy, 'in future')
+    }
+    if (month > 12 || month < 1 || month === '' ) {
       errors.months = true
       console.log('month error')
     }
@@ -59,6 +65,7 @@ function App() {
     if (year === '' || year > new Date().getFullYear()) {
       errors.years = true;
     }
+
     
     for (const key in errors) {
       if (errors[key] == true) {
@@ -74,17 +81,24 @@ function App() {
     let birthday = new Date(year, month - 1, day)
     let current = new Date()
     const diff = intervalToDuration({start: birthday, end: current})
+    console.log(diff)
     setCan_play_animation(true)
     setDisplay({
       years: diff.years || '- -',
       months: diff.months || '- -',
       days: diff.days || '- -'
     })
+    
+    if (!diff.years && !diff.months && !diff.days) {
+      console.log('triggered')
+      setDisplay({
+      years: diff.years || '- -',
+      months: diff.months || '- -',
+      days: diff.days || 0
+      })
+    }
+    
   }
-
-  useEffect(() => {
-    console.log(display)
-  },[display])
 
   function clickHandler() {
     if (date_is_valid() === true) {
@@ -161,9 +175,9 @@ function App() {
         
         <div className='content-wrapper'>
           <div className='content'>
-            <h2 id='margin-top-0'><span className='value-display'>{display.years == '- -' ? display.years : <Number n={display.years} />}</span>years</h2>
-            <h2><span className='value-display'>{display.months == '- -' ? display.months : <Number n={display.months} />}</span>months</h2>
-            <h2><span className='value-display'>{display.days == '- -' ? display.days : <Number n={display.days} />}</span>days</h2>
+            <h2 id='margin-top-0'><span className='value-display'>{display.years == '- -' ? display.years : <Number n={display.years} />}</span>{display.years == 1 ? 'year' : 'years'}</h2>
+            <h2><span className='value-display'>{display.months == '- -' ? display.months : <Number n={display.months} />}</span>{display.months == 1 ? 'month' : 'months'}</h2>
+            <h2><span className='value-display'>{display.days == '- -' ? display.days : <Number n={display.days} />}</span>{display.days == 1 ? 'day' : 'days'}</h2>
           </div>
         </div>
       </div>
